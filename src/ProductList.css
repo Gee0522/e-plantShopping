@@ -41,22 +41,25 @@ body {
 
 /* Product Grid */
 .product-grid {
+    padding-top: 10px;
     display:flex;
     flex-direction: column;
     width: 100vw;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 .product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    /* background-color: pink; */
-    /* justify-content: space-between; */
+    /* background-color: rgb(35, 216, 240); */
+    justify-content: space-between;
     padding: 20px;
     width: 100%;
     align-items: center;
     justify-content: center;
+    
 }
 
 /* Product Card */
@@ -70,9 +73,25 @@ body {
     border-radius: 5px;
     text-align: center;
     position: relative;
-    
     gap: 20px;
 }
+
+.cart-item-count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+  }
+
+  .cart {
+    position: relative;
+  }
 
 /* Pseudo-classes - Hover effect on product button */
 .product-card:hover {
@@ -210,7 +229,14 @@ body {
     transition-duration: 0.4s;
     cursor: pointer;
   }
-  
+
+  .product-button:disabled {
+    background-color: #ccc; 
+    color: #910000; 
+    cursor: not-allowed; 
+    opacity: 0.7; 
+  }
+ 
   .product-button:hover {
     background-color: #45a049;
   }

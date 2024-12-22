@@ -143,7 +143,7 @@ body {
 }
 .tag_home_link{
     display: flex;
-    /* background-color: red; */
+    background-color: red;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -158,6 +158,36 @@ body {
 .tag a{
     text-decoration: none;
 }
+
+.a-plant {
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: #fdfa24c5; 
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px; 
+    margin-left: 5px;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .a-plant:hover {
+    background-color: #59a85dab; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px); 
+    color: hsl(0, 0%, 100%);
+
+  }
+  
+  .a-plant:active {
+    background-color: #3e8e41; 
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); 
+    transform: translateY(2px); 
+  }
+  
+
 .tag {
     width: 400px;
     display: flex;

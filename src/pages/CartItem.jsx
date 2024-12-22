@@ -4,17 +4,11 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, updateQuantity } from "../CartSlice";
 import "../CartItem.css";
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [showProductList, setShowProductList] = useState(false);
-
-  const handleContinueShopping = () => {
-    navigate("/productlist");
-  };
 
   const calculateTotalAmount = () => {
     if (!cart || cart.length === 0) return 0; // Handle empty cart
@@ -50,9 +44,12 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleCheckout = () => {
     if (cart.length === 0) {
-      alert("Your cart is empty. Add items before checkout!");
+      Swal.fire("Your cart is empty. Add items before checkout!");
     } else {
-      navigate("/"); // Replace with your checkout logic or route
+      Swal.fire({
+        text: "Sorry, no check out page for now.",
+        icon: "error",
+      });
     }
   };
 
@@ -72,6 +69,7 @@ const CartItem = ({ onContinueShopping }) => {
                 <button
                   className="cart-item-button cart-item-button-dec"
                   onClick={() => handleDecrement(item)}
+                  disabled={item.quantity <= 1} // Disable if quantity is 1 or less
                 >
                   -
                 </button>
@@ -103,10 +101,7 @@ const CartItem = ({ onContinueShopping }) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button
-          className="get-started-button"
-          onClick={() => handleContinueShopping()}
-        >
+        <button className="get-started-button" onClick={onContinueShopping}>
           Continue Shopping
         </button>
         <br />

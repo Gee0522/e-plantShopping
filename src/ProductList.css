@@ -209,6 +209,11 @@ body {
     width: 650px;
     font-size: 19px;
 }
+
+.logo {
+  padding-left: 10px;
+}
+
 .cart{
     color: white;
     display: flex;

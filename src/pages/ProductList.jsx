@@ -86,7 +86,7 @@ function ProductList() {
                 alt=""
               />
               <a href="/" style={{ textDecoration: "none" }}>
-                <div>
+                <div className="logo">
                   <h3 style={{ color: "white" }}>Paradise Nursery</h3>
                   <i style={{ color: "white" }}>Where Green Meets Serenity</i>
                 </div>
@@ -175,12 +175,13 @@ function ProductList() {
                 <div className="product-list">
                   {category.plants.map((plant, plantIndex) => (
                     <div className="product-card" key={plantIndex}>
+                      <div className="product-title">{plant.name}</div>
                       <img
                         className="product-image"
                         src={plant.image}
                         alt={plant.name}
                       />
-                      <div className="product-title">{plant.name}</div>
+
                       <div className="product-cost">{plant.cost}</div>
                       <div className="product-cost">{plant.description}</div>
                       {/*Similarly like the above plant.name show other details like description and cost*/}
@@ -190,7 +191,7 @@ function ProductList() {
                         disabled={addedToCart[plant.name]} // Disable the button if the item is already added
                       >
                         {addedToCart[plant.name]
-                          ? "Already in cart"
+                          ? "Added to cart"
                           : "Add to Cart"}
                       </button>
                     </div>

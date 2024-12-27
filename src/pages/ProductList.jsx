@@ -169,7 +169,7 @@ function ProductList() {
           <div className="product-grid">
             {plantsArray.map((category, index) => (
               <div key={index} id={category.category}>
-                <h1>
+                <h1 className="cath1">
                   <div>{category.category}</div>
                 </h1>
                 <div className="product-list">

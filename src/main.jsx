@@ -5,10 +5,10 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store.js";
 import { BrowserRouter } from "react-router-dom";
-// import { BrowserRouter } from "react-router-dom";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/shoppingreact">
+    <BrowserRouter basename="/e-plantShopping">
       <Provider store={store}>
         <App />
       </Provider>
